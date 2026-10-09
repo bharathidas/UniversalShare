@@ -1,0 +1,160 @@
+.widget-universalshare {
+    --us-size: 40px;
+    position: relative;
+}
+
+.us-grid,
+.us-popup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.us-item {
+    display: flex;
+    justify-content: center;
+}
+
+.us-item .react-share__ShareButton {
+    display: block;
+    line-height: 0;
+}
+
+.us-item .react-share__ShareButton:focus-visible,
+.us-more-btn:focus-visible {
+    outline: 2px solid #264ae5;
+    outline-offset: 2px;
+}
+
+/* More panel */
+
+.us-popup {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* More button */
+
+.us-more-btn {
+    width: var(--us-size);
+    height: var(--us-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 20%;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.us-more-btn.us-more-round {
+    border-radius: 50%;
+}
+
+.us-more-btn:hover {
+    background: #e0e0e0;
+}
+
+.us-more-icon {
+    font-size: calc(var(--us-size) / 2);
+    font-weight: bold;
+    line-height: 1;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.us-more-btn.open .us-more-icon {
+    transform: rotate(45deg);
+}
+
+/* Tooltip */
+
+.us-tooltip-wrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.us-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
+}
+
+.us-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.us-tooltip-wrapper:hover .us-tooltip,
+.us-tooltip-wrapper:focus-within .us-tooltip {
+    opacity: 1;
+}
+
+/* Disabled icon (a required value is missing) */
+
+.us-disabled {
+    display: block;
+    line-height: 0;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.us-badge-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+}
+
+.us-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff4d4f;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+/* Studio Pro design mode */
+
+.us-preview-caption {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666;
+}
